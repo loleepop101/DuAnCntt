@@ -60,23 +60,4 @@ Dựa trên kết quả thực nghiệm mới nhất tại `output/experiments_r
 | **U-TKO** | Khai phá 1 pha dựa trên **Utility-List**. Cắt tỉa dựa trên tổng `iutil + rutil`. | Hiệu năng ổn định, nhanh hơn U-TKU nhiều lần trên dữ liệu lớn (chỉ mất ~9s cho `liquor` K=500). |
 | **U-EFIM** | Sử dụng mảng nguyên thủy (**Primitive Arrays**) và kỹ thuật chiếu DB (**Projection**). | **Tốc độ nhanh nhất** trong mọi trường hợp (chỉ ~5s cho `liquor` K=500). Tuy nhiên, tiêu tốn RAM hơn do cấu trúc mảng chiếu. |
 
-### Kết quả mẫu (Dataset: liquor.txt, K=500)
-- **U-TKU**: 164,406 ms | 67.80 MB
-- **U-TKO**: 9,042 ms | 43.82 MB
-- **U-EFIM**: 5,144 ms | 124.44 MB
-
-##  Định dạng Dữ liệu
-File đầu vào phải tuân thủ định dạng: `Items:TU:Utilities:Probabilities`
-Ví dụ: `1 3:10:5 2:0.9 0.6`
-- Items: 1 và 3
-- TU (Transaction Utility): 10
-- Utilities: item 1 có u=5, item 3 có u=2
-- Probabilities: item 1 có p=0.9, item 3 có p=0.6
-
----
-**Cập nhật**: 30/12/2025.
-b-tree Utility** |
-| **Cơ chế đặc thù** | Two-Phase Mining | Join & Intersection | **Database Projection** |
-| **Độ chính xác** | Thấp | Khá Cao | Cao |
-
 **Cập nhật lần cuối**: Tháng 12, 2025
